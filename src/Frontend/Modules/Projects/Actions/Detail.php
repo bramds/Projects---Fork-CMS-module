@@ -117,8 +117,9 @@ class Detail extends FrontendBaseBlock
 	if($this->settings['allow_multiple_categories']) $this->header->setPageTitle($this->record['category_title']);
 	$this->header->setPageTitle($this->record['title']);
 
-	$this->addJS('jquery.colorbox-min.js');
-	$this->addJS('detail.js');
+	// Add colobox js to show the image on detail page
+	$this->header->addJS('/src/Frontend/Modules/' . $this->getModule() . '/Js/jquery.colorbox-min.js');
+	$this->header->addJS('/src/Frontend/Modules/' . $this->getModule() . '/Js/detail.js');
 
 	$this->addJSData('next', FL::getLabel('Next'));
 	$this->addJSData('previous', FL::getLabel('Previous'));
